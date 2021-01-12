@@ -1,11 +1,14 @@
 <?php
 
-	define("DB_SERVER", "localhost");
-    define("DB_USER", "matthewvaneenena");
-    define("DB_PASSWORD", "Gu2shaeSh8");
-    define("DB_DATABASE", "matthewvaneenena");
+	//define("DB_SERVER", "localhost");
+    //define("DB_USER", "matthewvaneenena");
+    //define("DB_PASSWORD", "Gu2shaeSh8");
+    //define("DB_DATABASE", "matthewvaneenena");
 
-    $con = mysqli_connect(DB_SERVER , DB_USER, DB_PASSWORD, DB_DATABASE);
+    //$con = mysqli_connect(DB_SERVER , DB_USER, DB_PASSWORD, DB_DATABASE);
+
+    //read config
+    require_once('config.php');
     
     //check connection
     if (mysqli_connect_errno()){
