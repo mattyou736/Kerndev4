@@ -24,6 +24,11 @@ public class Gamemanager : MonoBehaviourPunCallbacks
     public Board player1Board;
     public Board player2Board;
 
+    [SerializeField]
+    public int player1BoardSquareDestroyed;
+    [SerializeField]
+    public int player2BoardSquareDestroyed;
+
     public GameObject wall;
     public Transform movepoint;
 
@@ -53,8 +58,8 @@ public class Gamemanager : MonoBehaviourPunCallbacks
             if (PhotonNetwork.LocalPlayer.IsMasterClient)
             {
                 usernameWinner = DBManager.username;
-                nameCarryOverScript.Endgame(usernameWinner);
-                CallSaveData();
+                nameCarryOverScript.Endgame(usernameWinner, player1BoardSquareDestroyed);
+                CallSaveData(true);
             }
             else
             {
@@ -69,25 +74,35 @@ public class Gamemanager : MonoBehaviourPunCallbacks
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 usernameWinner = DBManager.username;
-                nameCarryOverScript.Endgame(usernameWinner);
-                CallSaveData();
+                nameCarryOverScript.Endgame(usernameWinner,player2BoardSquareDestroyed);
+                CallSaveData(false);
             }
             else
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                nameCarryOverScript.Endgame(usernameWinner);
+                nameCarryOverScript.Endgame(usernameWinner, player2BoardSquareDestroyed);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(2);
             }
         }
     }
 
-    void CallSaveData()
+    void CallSaveData(bool playe1win)
     {
         isRunning = true;
         DBManager.score++;
-        StartCoroutine(SavePlayerData());
+        if (playe1win)
+        {
+            StartCoroutine(SavePlayerData());
+        }
+        else
+        {
+            StartCoroutine(SavePlayerData());
+        }
+            
+
     }
+
 
     IEnumerator SavePlayerData()
     {
@@ -107,7 +122,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
             Debug.Log("Game Saved to database Failed #" + www.text);
         }
 
-        DBManager.LogOut();
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

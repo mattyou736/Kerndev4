@@ -10,7 +10,9 @@ public class EndGameValues : MonoBehaviour
     [SerializeField]
     string password;
     [SerializeField]
-    public int point;
+    public int point; 
+    [SerializeField]
+    public int squaresDestroy;
 
     static bool created = false;
 
@@ -35,8 +37,9 @@ public class EndGameValues : MonoBehaviour
         
     }
 
-    public void Endgame(string _username)
+    public void Endgame(string _username , int _squaresDestroy)
     {
         username = _username;
+        squaresDestroy = _squaresDestroy;
     }
 }

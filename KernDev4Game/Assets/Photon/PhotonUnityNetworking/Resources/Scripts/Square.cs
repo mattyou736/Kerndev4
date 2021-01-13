@@ -58,12 +58,23 @@ public class Square : MonoBehaviour
     [PunRPC]
     public void DestroySquare()
     {
+        
         Destroy(gameObject);
         gman.redPlayerTurn = !gman.redPlayerTurn;
+        if (boardName == "player1-board")
+        {
+            gman.player1BoardSquareDestroyed += 1;
+        }
+        else if (boardName == "player2-board")
+        {
+            gman.player2BoardSquareDestroyed += 1;
+        }
+
         if (marked && boardName == "player1-board")
         {
             gman.gameFinished = true;
             gman.player1Wins = true;
+            
         }
         else if(marked && boardName == "player2-board")
         {

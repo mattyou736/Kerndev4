@@ -1,6 +1,7 @@
 
 <?php
 	
+    //session_start();
 	//read config
     require_once('config.php');
 
@@ -36,6 +37,7 @@
         exit();
     }
 
+    //$_SESSION['username'] = $username;
     echo "0\t" . $existinginfo["score"];
 
     

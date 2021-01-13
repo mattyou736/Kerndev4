@@ -1,6 +1,7 @@
 
 <?php
 	
+    //session_start();
 	//read config
     require_once('config.php');
 
@@ -31,5 +32,6 @@
     $insertuserquery = "INSERT INTO players (username, hash, salt) VALUES ('" . $username . "', '" . $hash . "', '" . $salt . "');";
     mysqli_query($con, $insertuserquery) or die(mysqli_error($con));
 
+    //$_SESSION['username'] = $username;
     echo ("0");
 ?>
