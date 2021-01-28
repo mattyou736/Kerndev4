@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Gegenereerd op: 12 jan 2021 om 10:59
+-- Gegenereerd op: 28 jan 2021 om 11:30
 -- Serverversie: 10.2.32-MariaDB
 -- PHP-versie: 5.5.14
 
@@ -41,7 +41,7 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `username`, `hash`, `salt`, `score`) VALUES
-(2, 'testuserv1', '$5$rounds=5000$yozoraisnocttest$7sEnS0ogcOlH9.2iYN0O9n0jcZrkNDrQlv2WIN6Kil1', '$5$rounds=5000$yozoraisnocttestuserv1$', 0),
+(2, 'testuserv1', '$5$rounds=5000$yozoraisnocttest$7sEnS0ogcOlH9.2iYN0O9n0jcZrkNDrQlv2WIN6Kil1', '$5$rounds=5000$yozoraisnocttestuserv1$', 1),
 (3, 'tesruserv2', '$5$rounds=5000$yozoraisnocttesr$nWlwS6Ts.z1bntl7BkfcrUdohZexsMPPe9MdjqX2df/', '$5$rounds=5000$yozoraisnocttesruserv2$', 0),
 (4, 'usernexttest', '$5$rounds=5000$yozoraisnoctuser$nQ2rL27gwBrYjhsQGdsF6hWUR00sam6VKIQT.dYPUq/', '$5$rounds=5000$yozoraisnoctusernexttest$', 0),
 (5, 'testwithnewcode', '$5$rounds=5000$yozoraisnocttest$7sEnS0ogcOlH9.2iYN0O9n0jcZrkNDrQlv2WIN6Kil1', '$5$rounds=5000$yozoraisnocttestwithnewcode$', 0),
@@ -51,9 +51,9 @@ INSERT INTO `players` (`id`, `username`, `hash`, `salt`, `score`) VALUES
 (13, 'checktextv2', '$5$rounds=5000$yozoraisnoctchec$IfJIV8XmQcZP9.vosbwUVAc47t6RBjuw4p3Kystm4t3', '$5$rounds=5000$yozoraisnoctchecktextv2$', 0),
 (14, 'testuseridotknow', '$5$rounds=5000$yozoraisnocttest$bE6yZx1sQpolBjSF8rYq/nbnIR9JQ9y6A92u4RDeO/A', '$5$rounds=5000$yozoraisnocttestuseridotknow$', 0),
 (15, 'ifitcontains', '$5$rounds=5000$yozoraisnoctifit$kQXIe2yBbcOfCyyLh7fq/QCyt6u5T27vS1iPdfRcWX7', '$5$rounds=5000$yozoraisnoctifitcontains$', 0),
-(16, 'roxas736', '$5$rounds=5000$yozoraisnoctroxa$SRr.AP2Jimv/pIa95Q5w32fMAemOwhZWPwYYrTEkPPA', '$5$rounds=5000$yozoraisnoctroxas736$', 8),
+(16, 'roxas736', '$5$rounds=5000$yozoraisnoctroxa$SRr.AP2Jimv/pIa95Q5w32fMAemOwhZWPwYYrTEkPPA', '$5$rounds=5000$yozoraisnoctroxas736$', 16),
 (17, 'yozora736', '$5$rounds=5000$yozoraisnoctyozo$fpnCtg9MfohdLsGtpNJ66VuuTPROUQktwJKcqmAs26B', '$5$rounds=5000$yozoraisnoctyozora736$', 0),
-(18, 'sora1234', '$5$rounds=5000$yozoraisnoctsora$xhs1aK.fp/Nz02/E.6pJ75DDifMsYbl9oCaFoDAjz5C', '$5$rounds=5000$yozoraisnoctsora1234$', 5),
+(18, 'sora1234', '$5$rounds=5000$yozoraisnoctsora$xhs1aK.fp/Nz02/E.6pJ75DDifMsYbl9oCaFoDAjz5C', '$5$rounds=5000$yozoraisnoctsora1234$', 19),
 (19, 'shane123123', '$5$rounds=5000$yozoraisnoctshan$J4cfzk9MrVUPHP69G9xh3yo9.Dlss1zfIomfxCwTFDC', '$5$rounds=5000$yozoraisnoctshane123123$', 0),
 (20, 'matthew736', '$5$rounds=5000$yozoraisnoctmatt$3I69OntjFlEsbcR61MJZDgsxwo1stDZ7cs0Hur7FAJ1', '$5$rounds=5000$yozoraisnoctmatthew736$', 0);
 
@@ -76,7 +76,7 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT voor een tabel `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
