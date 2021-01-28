@@ -33,7 +33,7 @@ public class EndScreen : MonoBehaviour
     IEnumerator SavePlayerData()
     {
         WWWForm form2 = new WWWForm();
-        form2.AddField("username", DBManager.username);
+        form2.AddField("id", DBManager.id);
         form2.AddField("score", DBManager.score);
         form2.AddField("squareDestroyed", nameCarryOverScript.squaresDestroy);
 

@@ -1,9 +1,11 @@
 
 <?php
 	
-    //session_start();
+    
 	//read config
     require_once('config.php');
+
+    session_start();
 
     //check that connect happend
     if (mysqli_connect_errno()){
@@ -15,7 +17,9 @@
     $password = $_POST["password"];
 
     //see if name exists already
-     $namecheckquery = "SELECT username, salt, hash, score FROM players WHERE username='". $username . "';";
+     $namecheckquery = "SELECT id, username, salt, hash, score FROM players WHERE username='". $username . "';";
+
+     $idCheckQuery = "SELECT id, FROM players WHERE username='". $username . "';";
 
      //does it work 
       $namecheck = mysqli_query($con, $namecheckquery) or die("Error 2 Name check query failed"); //error 2
@@ -37,8 +41,9 @@
         exit();
     }
 
-    //$_SESSION['username'] = $username;
-    echo "0\t" . $existinginfo["score"];
+    $_SESSION['username'] = $username;
+    $_SESSION['id'] = $existinginfo["id"];
+    echo "0\t" . $existinginfo["score"]."\t". $_SESSION['id'];
 
     
 ?>

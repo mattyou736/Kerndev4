@@ -55,6 +55,8 @@ public class Login : MonoBehaviour
             DBManager.username = userNameInput.text;
             userHolder.usernamePlayer = userNameInput.text;
             DBManager.score = int.Parse(www.text.Split('\t')[1]);
+            DBManager.id = int.Parse(www.text.Split('\t')[2]);
+            Debug.Log("ID = " + DBManager.id);
             menManager.OpenMenu(mainMenu);
         }
         else

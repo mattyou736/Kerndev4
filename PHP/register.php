@@ -16,6 +16,7 @@
 
     //see if name exists already
      $namecheckquery = "SELECT username FROM players WHERE username='". $username . "';";
+     $idCheckQuery = "SELECT id, FROM players WHERE username='". $username . "';";
 
      //does it work 
       $namecheck = mysqli_query($con, $namecheckquery) or die("Error 2 Name check query failed"); //error 2
@@ -32,6 +33,6 @@
     $insertuserquery = "INSERT INTO players (username, hash, salt) VALUES ('" . $username . "', '" . $hash . "', '" . $salt . "');";
     mysqli_query($con, $insertuserquery) or die(mysqli_error($con));
 
-    //$_SESSION['username'] = $username;
+    
     echo ("0");
 ?>

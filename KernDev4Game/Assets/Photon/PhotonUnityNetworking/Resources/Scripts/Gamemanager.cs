@@ -107,6 +107,7 @@ public class Gamemanager : MonoBehaviourPunCallbacks
     IEnumerator SavePlayerData()
     {
         WWWForm form = new WWWForm();
+        form.AddField("id", DBManager.id);
         form.AddField("username", DBManager.username);
         form.AddField("score", DBManager.score);
 

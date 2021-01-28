@@ -5,7 +5,7 @@
 	$querry = "SELECT * FROM players ORDER BY score DESC";
 	$alle_gegevens = mysqli_query($con ,$querry);
 
-	$querry2 = "SELECT * FROM WinningGameDates ORDER BY playdate DESC";
+	$querry2 = "SELECT * FROM players INNER JOIN WinningGameDates ON players.id = WinningGameDates.id  ORDER BY playdate DESC";
 	$alle_gegevens2 = mysqli_query($con ,$querry2);
 ?>
 	<html>
@@ -47,6 +47,7 @@
 			echo "<table border = true>";
 			echo "<tr>";
 			echo "<td>Username</td>";
+			echo "<td>Total Score</td>";
 			echo "<td>Amount of Wins racked up at that moment of the game</td>";
 			echo "<td>Squares destroyed in that game</td>";
 			echo "<td>Date played</td>";
@@ -57,6 +58,7 @@
 				echo "<tr>";
 				echo "<td>" . $rij['username'] . "</td>";
 				echo "<td>" . $rij['score'] . "</td>";
+				echo "<td>" . $rij['scoreAtPlayTime'] . "</td>";
 				echo "<td>" . $rij['squareDestroyed'] . "</td>";
 				echo "<td>" . $rij['playdate'] . "</td>";
 				echo "</tr>";

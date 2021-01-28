@@ -9,6 +9,7 @@ public static class DBManager
     /// </summary>
     public static string username;
     public static int score;
+    public static int id;
     //if username is null nobody logged in
     public static bool LoggedIn { get { return username != null; } }
 
